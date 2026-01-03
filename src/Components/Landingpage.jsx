@@ -235,10 +235,15 @@ function Landingpage() {
         </div>
 
         {/* Plan Trip Button */}
-        <button className="plan-btn" onClick={() => navigate('/createtrip')}>
-  <span className="plan-icon">+</span>
-  <span>Plan a trip</span>
-</button>
+     <div className="plan-btn-group">
+  <button className="plan-btn" onClick={() => navigate('/createtrip')}>
+    <span className="plan-icon">+</span>
+    <span>Plan a trip</span>
+  </button>
+  <button className="plan-btn" onClick={() => navigate('/community')}>
+    <span>Community</span>
+  </button>
+</div>
 
       </div>
     </div>

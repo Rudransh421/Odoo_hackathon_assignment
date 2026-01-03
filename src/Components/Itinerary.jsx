@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Itinerary.css';
 
 function Itinerary() {
+  const navigate = useNavigate();
+
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [totalBudget, setTotalBudget] = useState('');
@@ -15,9 +18,7 @@ function Itinerary() {
 
     const start = new Date(startDate);
     const end = new Date(endDate);
-
-    const totalDays =
-      Math.ceil((end - start) / (1000 * 60 * 60 * 24)) + 1;
+    const totalDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24)) + 1;
 
     if (totalDays <= 0) {
       alert('Invalid date range');
@@ -75,6 +76,16 @@ function Itinerary() {
         </button>
       </div>
 
+      {/* BUTTON TO NAVIGATE TO ACTIVITIES */}
+      <div className="activities-btn-container">
+        <button
+          className="navigate-activities-btn"
+          onClick={() => navigate('/activities')}
+        >
+          Explore Activities
+        </button>
+      </div>
+
       {/* DAY WISE LONG VIEW */}
       {dayPlans.length > 0 && (
         <div className="day-plan-section">
@@ -94,9 +105,7 @@ function Itinerary() {
 
               <div className="day-total">
                 Day Total: ₹{' '}
-                {day.activities.reduce(
-                  (sum, a) => sum + a.expense, 0
-                )}
+                {day.activities.reduce((sum, a) => sum + a.expense, 0)}
               </div>
             </div>
           ))}

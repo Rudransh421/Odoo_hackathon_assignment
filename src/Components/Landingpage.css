@@ -341,7 +341,17 @@
   margin: 0 1.5rem 1.5rem 1.5rem;
 }
 
+ .plan-btn-group {
+  display: flex;
+  gap: 15px; /* Space between buttons */
+  margin-top: 20px;
+}
+
 .plan-btn {
+  display: flex;
+  flex-direction: row; /* ensures icon + text are in a row */
+  align-items: center;
+  gap: 0.5rem;
   background: transparent;
   border: 2px solid #fff;
   border-radius: 4px;
@@ -350,16 +360,11 @@
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   transition: all 0.3s ease;
 }
 
-.plan-btn:hover {
-  background: #fff;
-  color: #000;
-}
+ 
+
 
 .plan-icon {
   font-size: 1.25rem;

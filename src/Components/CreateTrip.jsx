@@ -66,7 +66,7 @@ function CreateTrip() {
 
         {/* Header */}
         <div className="app-header">
-          <span className="app-name">GlobeTrotter</span>
+          <span className="app-name">GlobalTrotter</span>
           <button className="settings-btn">
             <span>⚙</span>
           </button>
