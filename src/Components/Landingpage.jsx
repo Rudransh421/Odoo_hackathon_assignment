@@ -110,14 +110,25 @@ function Landingpage() {
   return (
     <div className="landing-container">
       <div className="main-wrapper">
+{/* App Header */}
+<div className="app-header">
+  <span className="app-name">GlobalTrotter</span>
 
-        {/* App Header */}
-        <div className="app-header">
-          <span className="app-name">GlobalTrotter</span>
-          <button className="settings-btn">
-            <span>⚙</span>
-          </button>
-        </div>
+  <div className="header-actions">
+    <button 
+      className="profile-btn"
+      onClick={() => navigate('/profile')}
+      title="Profile"
+    >
+      👤
+    </button>
+
+    <button className="settings-btn" title="Settings">
+      ⚙
+    </button>
+  </div>
+</div>
+
 
         {/* Banner */}
         <div className="banner">

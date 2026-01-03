@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './CreateTrip.css'
-
+import { useNavigate } from 'react-router-dom';
 function CreateTrip() {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1)
   const [tripData, setTripData] = useState({
     tripName: '',
@@ -148,7 +149,7 @@ function CreateTrip() {
 
             <button
               className="plan-btn"
-              onClick={() => alert('Trip Planned Successfully!')}
+              onClick={() => navigate('/itinerary', { state: { tripData } })}
             >
               Finish
             </button>
