@@ -1,7 +1,7 @@
 import { ApiError } from "../utilities/ApiError.js";
 import jwt from "jsonwebtoken";
-import { User } from "../model/user/user.model.js";
-import { performance } from "perf_hooks";
+import { User } from "../model/user.model.js";
+import { performance } from "node:perf_hooks";
 
 export const verifyJwt = async (req, res, next) => {
   const start = performance.now();

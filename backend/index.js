@@ -56,12 +56,6 @@ async function closeServer() {
       console.log("✅ HTTP server closed.");
     }
 
-    // 2️⃣ Close Socket.IO
-    if (io) {
-      await new Promise((resolve) => io.close(resolve));
-      console.log("✅ Socket.IO closed.");
-    }
-
     // 3️⃣ Close DB connection
     if (mongoose.connection.readyState === 1) {
       // connected

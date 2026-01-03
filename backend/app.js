@@ -4,9 +4,12 @@ import cors from "cors";
 
 import helmet from "helmet";
 
-import userRouter from "./routes/user/user.routes.js";
+import userRouter from "./routes/user.routes.js";
 
 import { errorHandler } from "./middleware/error.middleware.js";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
+
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);

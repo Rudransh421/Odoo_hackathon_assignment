@@ -1,16 +1,16 @@
-import crypto from "crypto";
+import crypto from "node:crypto";
 import nodemailer from "nodemailer";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { User } from "../../model/user/user.model.js";
-import { ApiError } from "../../utilities/ApiError.js";
-import { ApiResponse } from "../../utilities/ApiResponse.js";
+import { User } from "../model/user.model.js";
+import { ApiError } from "../utilities/ApiError.js";
+import { ApiResponse } from "../utilities/ApiResponse.js";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import {
   uploadOnCloudinary,
   deleteFromCloudinary,
-} from "../../utilities/cloudinary.js";
-import { sendEmail } from "../../utilities/sendEmail.js";
+} from "../utilities/cloudinary.js";
+import { sendEmail } from "../utilities/sendEmail.js";
 const isProd = process.env.NODE_ENV === "production";
 
 const baseOption = {
@@ -643,5 +643,4 @@ export {
   removeProfilePhoto,
   getUserEmail,
   getUserProfile,
-  verifyLogin,
 };
