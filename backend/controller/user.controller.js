@@ -135,10 +135,10 @@ const registerUser = async (req, res) => {
     // Send thank you email
     await sendEmail({
       to: email,
-      subject: "🎉 Welcome to EventsBridge - User Registration",
+      subject: "🎉 Welcome to GlobeTrotter - User Registration",
       html: `
     <h2>Hi ${fullName},</h2>
-    <p>Thank you for registering with <strong>EventsBridge</strong>!</p>
+    <p>Thank you for registering with <strong>GlobeTrotter</strong>!</p>
     <p><strong>Your Details:</strong></p>
     <ul>
       <li><strong>Name:</strong> ${fullName}</li>
@@ -147,7 +147,7 @@ const registerUser = async (req, res) => {
     </ul>
     <p>We're excited to have you onboard.</p>
     <br/>
-    <p>Best regards,<br/>Team EventsBridge</p>
+    <p>Best regards,<br/>Team GlobeTrotter</p>
   `,
     });
 
