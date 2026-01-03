@@ -88,10 +88,10 @@ const generateAccessAndRefreshTokens = async (userId) => {
 
 const registerUser = async (req, res) => {
   try {
-    const { fullName, email, phoneNo, password, city, country } = req.body;
+    const { fullName, email, phoneNo, password, city, country, additionalInfo } = req.body;
     console.log("Reaching Register user in backend");
 
-    if (!fullName || !email || !password || !phoneNo || !city || !country) {
+    if (!fullName || !email || !password || !phoneNo || !city || !country || !additionalInfo) {
       return res.status(400).json(new ApiError(400, "All fields are required"));
     }
 
@@ -121,6 +121,7 @@ const registerUser = async (req, res) => {
       profilePhoto: generateProfilePicture(fullName), // Generate default profile picture
       city,
       country,
+      additionalInfo
     });
 
     const { accessToken, refreshToken } = await generateAccessAndRefreshTokens(
@@ -259,9 +260,9 @@ const logoutUser = async (req, res) => {
 
 const updateUserProfile = async (req, res) => {
   try {
-    const { fullName, email, phoneNo, city, country } = req.body;
+    const { fullName, email, phoneNo, city, country, additionalInfo } = req.body;
 
-    if (!fullName || !email || !phoneNo || !city || !country) {
+    if (!fullName || !email || !phoneNo || !city || !country || !additionalInfo) {
       return res.status(400).json(new ApiError(400, "All fields are required"));
     }
 
@@ -278,7 +279,7 @@ const updateUserProfile = async (req, res) => {
 
     const updatedUser = await User.findByIdAndUpdate(
       req.user._id,
-      { fullName, email, phoneNo, profilePhoto: user.profilePhoto, city, country },
+      { fullName, email, phoneNo, profilePhoto: user.profilePhoto, city, country, additionalInfo },
       { new: true, runValidators: true }
     ).select("fullName email phoneNo profilePhoto eventsBooked");
 
