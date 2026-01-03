@@ -1,15 +1,95 @@
+/* CreateTrip.css */
+
 .trip-form-section {
-  padding: 20px;
+  margin: 2rem 1.5rem;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1.5rem;
 }
 
 .date-row {
-  display: flex;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
-.date-row input {
-  flex: 1;
+.date-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.date-field label {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 0 1.5rem;
+}
+
+.plan-btn.secondary {
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+.plan-btn.secondary:hover {
+  background: #fff;
+  color: #000;
+}
+
+.back-btn {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.plan-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.plan-btn:disabled:hover {
+  background: transparent;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .date-row {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .form-container {
+    padding: 0 1rem;
+  }
 }

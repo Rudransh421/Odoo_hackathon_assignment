@@ -4,12 +4,12 @@
   padding: 20px;
   font-family: Arial, sans-serif;
   min-height: 100vh;
-  background: linear-gradient(135deg, #a1b8d9 0%, #c5812f 100%);
+  background: linear-gradient(135deg, #6289c0 0%, #262676 100%);
 }
 
 .page-title {
   font-size: 32px;
-  color: #2c3e50;
+  color: #fff;
   margin-bottom: 25px;
   text-align: center;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
