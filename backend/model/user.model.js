@@ -32,6 +32,14 @@ const loginSchema = new Schema(
       type: String,
       default: "",
     },
+    city: {
+      type: String,
+      default: "",
+    },
+    country: {
+      type: String,
+      default: "",
+    },
     accessToken: {
       type: String,
     },

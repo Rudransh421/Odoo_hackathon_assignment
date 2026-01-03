@@ -88,10 +88,10 @@ const generateAccessAndRefreshTokens = async (userId) => {
 
 const registerUser = async (req, res) => {
   try {
-    const { fullName, email, phoneNo, password } = req.body;
+    const { fullName, email, phoneNo, password, city, country } = req.body;
     console.log("Reaching Register user in backend");
 
-    if (!fullName || !email || !password || !phoneNo) {
+    if (!fullName || !email || !password || !phoneNo || !city || !country) {
       return res.status(400).json(new ApiError(400, "All fields are required"));
     }
 
@@ -119,6 +119,8 @@ const registerUser = async (req, res) => {
       phoneNo,
       password,
       profilePhoto: generateProfilePicture(fullName), // Generate default profile picture
+      city,
+      country,
     });
 
     const { accessToken, refreshToken } = await generateAccessAndRefreshTokens(
@@ -246,8 +248,6 @@ const logoutUser = async (req, res) => {
       .status(200)
       .clearCookie("accessToken", accessTokenOption)
       .clearCookie("refreshToken", refreshTokenOption)
-      .clearCookie("accessToken", accessTokenOption)
-      .clearCookie("refreshToken", refreshTokenOption)
       .json(new ApiResponse(200, {}, "User logged out successfully"));
   } catch (error) {
     console.error("Logout error:", error);
@@ -259,9 +259,9 @@ const logoutUser = async (req, res) => {
 
 const updateUserProfile = async (req, res) => {
   try {
-    const { fullName, email, phoneNo } = req.body;
+    const { fullName, email, phoneNo, city, country } = req.body;
 
-    if (!fullName || !email || !phoneNo) {
+    if (!fullName || !email || !phoneNo || !city || !country) {
       return res.status(400).json(new ApiError(400, "All fields are required"));
     }
 
@@ -278,7 +278,7 @@ const updateUserProfile = async (req, res) => {
 
     const updatedUser = await User.findByIdAndUpdate(
       req.user._id,
-      { fullName, email, phoneNo, profilePhoto: user.profilePhoto },
+      { fullName, email, phoneNo, profilePhoto: user.profilePhoto, city, country },
       { new: true, runValidators: true }
     ).select("fullName email phoneNo profilePhoto eventsBooked");
 
