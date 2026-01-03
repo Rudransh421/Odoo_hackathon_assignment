@@ -58,28 +58,29 @@ function Login({ onSwitchToRegister }) {
     }
   };
 
-  // Shared classes matching Registration.jsx exactly
+  // DARK THEME INPUT STYLES
+  // Matches Registration.jsx exactly: Dark bg, white text, subtle border
   const inputClasses =
-    "w-full px-3 py-2.5 rounded-md border border-gray-300 text-sm outline-none transition-all duration-200 focus:border-[#667eea] focus:ring-4 focus:ring-[#667eea]/20";
+    "w-full px-3 py-2.5 rounded-md bg-gray-700 border border-gray-600 text-white placeholder-gray-400 text-sm outline-none transition-all duration-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20";
 
   return (
-    // Container: Matches the gray background and centering of Registration
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50 p-4">
-      {/* Card: Consistent shadow/rounding, but max-w-md (medium) for better Login aesthetics */}
-      <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
-        {/* Logo Section - Identical to Registration */}
+    // Container: Dark background (gray-900)
+    <div className="min-h-screen w-full flex items-center justify-center bg-gray-900 p-4">
+      {/* Card: Dark gray (gray-800), max-w-md for compact login view */}
+      <div className="w-full max-w-md bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-700/50">
+        {/* Logo Section */}
         <div className="flex flex-col items-center mb-8">
-          <div className="h-16 w-16 bg-indigo-50 text-[#667eea] rounded-full flex items-center justify-center mb-2 shadow-sm border border-indigo-100">
+          <div className="h-16 w-16 bg-indigo-900/50 text-indigo-400 rounded-full flex items-center justify-center mb-2 shadow-sm border border-indigo-500/30">
             <span className="font-bold text-sm">Photo</span>
           </div>
-          <h2 className="text-2xl font-bold text-gray-800">Welcome Back</h2>
-          <p className="text-gray-500 text-sm">Login to your account</p>
+          <h2 className="text-2xl font-bold text-white">Welcome Back</h2>
+          <p className="text-gray-400 text-sm">Login to your account</p>
         </div>
 
         {/* Login Form */}
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
           {error && (
-            <div className="bg-red-50 text-red-600 text-sm p-3 rounded-md border border-red-100">
+            <div className="bg-red-900/30 text-red-400 text-sm p-3 rounded-md border border-red-800/50">
               {error}
             </div>
           )}
@@ -108,14 +109,14 @@ function Login({ onSwitchToRegister }) {
             />
           </div>
 
-          {/* Submit Button - Identical styling to Registration */}
+          {/* Submit Button */}
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-3 px-4 rounded-md text-white font-medium transition-colors duration-200 mt-2 ${
+            className={`w-full py-3 px-4 rounded-md text-white font-medium transition-all duration-200 mt-2 ${
               loading
-                ? "bg-indigo-300 cursor-not-allowed"
-                : "bg-[#667eea] hover:bg-[#5a67d8] shadow-md hover:shadow-lg"
+                ? "bg-indigo-900/50 cursor-not-allowed text-gray-400"
+                : "bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-500/20"
             }`}
           >
             {loading ? "Logging in..." : "Login"}
@@ -123,13 +124,13 @@ function Login({ onSwitchToRegister }) {
         </form>
 
         {/* Switch to Register */}
-        <div className="mt-6 text-center text-sm text-gray-600">
+        <div className="mt-6 text-center text-sm text-gray-400">
           <p>
             Don't have an account?{" "}
             <button
               type="button"
               onClick={onSwitchToRegister}
-              className="text-[#667eea] font-medium hover:underline focus:outline-none"
+              className="text-indigo-400 font-medium hover:text-indigo-300 hover:underline focus:outline-none transition-colors"
             >
               Register here
             </button>

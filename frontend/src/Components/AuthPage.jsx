@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import Registration from './Registration'
-import Login from './Login'
+import React, { useState } from "react";
+import Registration from "./Registration";
+import Login from "./Login";
 
 function AuthPage() {
-  const [showLogin, setShowLogin] = useState(false)
+  const [showLogin, setShowLogin] = useState(false);
 
   return (
     <>
@@ -13,7 +13,7 @@ function AuthPage() {
         <Registration onSwitchToLogin={() => setShowLogin(true)} />
       )}
     </>
-  )
+  );
 }
 
-export default AuthPage
+export default AuthPage;

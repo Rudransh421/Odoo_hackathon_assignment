@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import "./Auth.css"; // Removed: Styles are now handled by Tailwind
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/UserSlice.js";
@@ -68,33 +67,33 @@ function Registration({ onSwitchToLogin, onRegisterSuccess }) {
     }
   };
 
-  // Shared classes to ensure consistency across all inputs
   const inputClasses =
-    "w-full px-3 py-2.5 rounded-md border border-gray-300 text-sm outline-none transition-all duration-200 focus:border-[#667eea] focus:ring-4 focus:ring-[#667eea]/20 resize-none";
+    "w-full px-3 py-2.5 rounded-md bg-gray-700 border border-gray-600 text-white placeholder-gray-400 text-sm outline-none transition-all duration-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20 resize-none";
 
   return (
-    // Improvised: Full screen container with gray bg
-    <div className="min-h-screen w-full flex items-center justify-center bg-[#e2e8f0] rounded-xl p-4">
-      {/* Improvised: Card styling with shadow and white bg */}
-      <div className="w-full max-w-lg bg-white rounded-xl shadow-lg p-8">
+    // Container: Dark background (gray-900)
+    <div className="min-h-screen w-full flex items-center justify-center bg-gray-900 p-4">
+      {/* Card: Dark gray (gray-800), white text, subtle border for depth */}
+      <div className="w-full max-w-lg bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-700/50">
         {/* Logo Section */}
         <div className="flex flex-col items-center mb-8">
-          <div className="h-16 w-16 bg-indigo-50 text-[#667eea] rounded-full flex items-center justify-center mb-2 shadow-sm border border-indigo-100">
+          {/* Logo Circle: Darker Indigo background */}
+          <div className="h-16 w-16 bg-indigo-900/50 text-indigo-400 rounded-full flex items-center justify-center mb-2 shadow-sm border border-indigo-500/30">
             <span className="font-bold text-sm">Photo</span>
           </div>
-          <h2 className="text-2xl font-bold text-gray-800">Create Account</h2>
-          <p className="text-gray-500 text-sm">Sign up to get started</p>
+          <h2 className="text-2xl font-bold text-white">Create Account</h2>
+          <p className="text-gray-400 text-sm">Sign up to get started</p>
         </div>
 
         {/* Registration Form */}
         <form className="flex flex-col w-full gap-4" onSubmit={handleSubmit}>
           {error && (
-            <div className="bg-red-50 text-red-600 text-sm p-3 rounded-md border border-red-100">
+            <div className="bg-red-900/30 text-red-400 text-sm p-3 rounded-md border border-red-800/50">
               {error}
             </div>
           )}
 
-          {/* Row: Name */}
+          {/* Row: Name (Responsive: Stacks on mobile, row on sm screens) */}
           <div className="flex flex-col sm:flex-row gap-3 w-full">
             <div className="flex-1 flex flex-col">
               <input
@@ -184,7 +183,7 @@ function Registration({ onSwitchToLogin, onRegisterSuccess }) {
             />
           </div>
 
-          {/* Password - Standardized to match other inputs */}
+          {/* Password */}
           <div className="flex flex-col flex-1">
             <input
               type="password"
@@ -201,10 +200,10 @@ function Registration({ onSwitchToLogin, onRegisterSuccess }) {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-3 px-4 rounded-md text-white font-medium transition-colors duration-200 mt-2 ${
+            className={`w-full py-3 px-4 rounded-md text-white font-medium transition-all duration-200 mt-2 ${
               loading
-                ? "bg-indigo-300 cursor-not-allowed"
-                : "bg-[#667eea] hover:bg-[#5a67d8] shadow-md hover:shadow-lg"
+                ? "bg-indigo-900/50 cursor-not-allowed text-gray-400"
+                : "bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-500/20"
             }`}
           >
             {loading ? "Registering..." : "Register"}
@@ -212,13 +211,13 @@ function Registration({ onSwitchToLogin, onRegisterSuccess }) {
         </form>
 
         {/* Switch to Login */}
-        <div className="mt-6 text-center text-sm text-gray-600">
+        <div className="mt-6 text-center text-sm text-gray-400">
           <p>
             Already have an account?{" "}
             <button
               type="button"
               onClick={onSwitchToLogin}
-              className="text-[#667eea] font-medium hover:underline focus:outline-none"
+              className="text-indigo-400 font-medium hover:text-indigo-300 hover:underline focus:outline-none transition-colors"
             >
               Login here
             </button>

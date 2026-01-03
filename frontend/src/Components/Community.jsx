@@ -1,41 +1,41 @@
-import React, { useState } from 'react';
-import './Community.css';
+import React, { useState } from "react";
+import "./Community.css";
 
 function Community() {
   const [posts, setPosts] = useState([
     {
       id: 1,
-      user: 'Alice',
-      topic: 'Trips',
-      content: 'Just completed a trip to Paris! Eiffel Tower was amazing 😍',
+      user: "Alice",
+      topic: "Trips",
+      content: "Just completed a trip to Paris! Eiffel Tower was amazing 😍",
       likes: 5,
-      comments: ['So jealous!', 'Beautiful photos!'],
+      comments: ["So jealous!", "Beautiful photos!"],
     },
     {
       id: 2,
-      user: 'Bob',
-      topic: 'Activities',
-      content: 'Tried cycling in the Alps, super fun but exhausting 🚴‍♂️',
+      user: "Bob",
+      topic: "Activities",
+      content: "Tried cycling in the Alps, super fun but exhausting 🚴‍♂️",
       likes: 8,
-      comments: ['Wow!', 'Adding this to my bucket list!'],
+      comments: ["Wow!", "Adding this to my bucket list!"],
     },
   ]);
 
-  const [newPost, setNewPost] = useState('');
-  const [newTopic, setNewTopic] = useState('Trips');
+  const [newPost, setNewPost] = useState("");
+  const [newTopic, setNewTopic] = useState("Trips");
 
   const addPost = () => {
     if (!newPost) return;
     const post = {
       id: posts.length + 1,
-      user: 'You',
+      user: "You",
       topic: newTopic,
       content: newPost,
       likes: 0,
       comments: [],
     };
     setPosts([post, ...posts]);
-    setNewPost('');
+    setNewPost("");
   };
 
   const likePost = (id) => {
@@ -58,10 +58,7 @@ function Community() {
 
       {/* New Post Section */}
       <div className="new-post-card">
-        <select
-          value={newTopic}
-          onChange={(e) => setNewTopic(e.target.value)}
-        >
+        <select value={newTopic} onChange={(e) => setNewTopic(e.target.value)}>
           <option value="Trips">Trips</option>
           <option value="Activities">Activities</option>
           <option value="Tips">Tips</option>
@@ -90,7 +87,7 @@ function Community() {
               <button onClick={() => likePost(post.id)}>👍 {post.likes}</button>
               <button
                 onClick={() => {
-                  const comment = prompt('Enter your comment:');
+                  const comment = prompt("Enter your comment:");
                   if (comment) addComment(post.id, comment);
                 }}
               >

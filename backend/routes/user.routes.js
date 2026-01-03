@@ -37,7 +37,7 @@ router.post("/change-password", verifyJwt, changePassword);
 router.route("/get-email").get(verifyJwt, getUserEmail);
 router.get("/profile", verifyJwt, getUserProfile);
 
-router.get("/profile", verifyJwt, getUserProfile);
+
 router.put("/update-profile", verifyJwt, updateUserProfile);
 
 router.put(
