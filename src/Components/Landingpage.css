@@ -1,0 +1,430 @@
+/* Landingpage.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.landing-container {
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  padding: 1.5rem;
+}
+
+.main-wrapper {
+  max-width: auto;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* App Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  border-bottom: 2px solid #fff;
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 0;
+}
+
+.app-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.settings-btn {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.settings-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Banner */
+.banner {
+  border: 2px solid #fff;
+  border-radius: 8px;
+  height: 200px;
+  background: linear-gradient(135deg, #4c1d95 0%, #1e3a8a 50%, #312e81 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 1.5rem 1rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.banner-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.banner-text {
+  font-size: 1.5rem;
+  font-family: serif;
+}
+
+/* Search Section */
+.search-section {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 1.5rem 1.5rem 1.5rem;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 0.625rem 0.875rem;
+  color: #fff;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #666;
+}
+
+.search-input:focus {
+  border-color: #999;
+}
+
+.search-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 0.625rem 0.875rem;
+  color: #fff;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  appearance: none;
+}
+
+.action-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.action-btn option {
+  background: #000;
+  color: #fff;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.875rem;
+}
+
+.result-count {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #999;
+  margin-left: 0.5rem;
+}
+
+.group-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 1.5rem 0 0.75rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.region-group:first-child .group-title {
+  margin-top: 0;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+/* Regional Selections */
+.regional-section {
+  margin: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.regional-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+}
+
+.region-card {
+  border: 2px solid #fff;
+  border-radius: 8px;
+  height: 112px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.region-card:hover {
+  transform: scale(1.05);
+}
+
+.region-card.europe {
+  background: linear-gradient(135deg, #2563eb 0%, #9333ea 100%);
+}
+
+.region-card.asia {
+  background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+}
+
+.region-card.americas {
+  background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+}
+
+.region-card.africa {
+  background: linear-gradient(135deg, #ca8a04 0%, #ea580c 100%);
+}
+
+.region-card.oceania {
+  background: linear-gradient(135deg, #0891b2 0%, #2563eb 100%);
+}
+
+.region-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.region-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.region-popularity {
+  font-size: 0.7rem;
+  color: #e5e5e5;
+  margin-top: 0.25rem;
+}
+
+/* Previous Trips */
+.trips-section {
+  margin: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.trip-card {
+  border: 2px solid #fff;
+  border-radius: 8px;
+  height: 192px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.trip-card:hover {
+  transform: scale(1.05);
+}
+
+.trip-card.paris {
+  background: linear-gradient(135deg, #db2777 0%, #f43f5e 100%);
+}
+
+.trip-card.tokyo {
+  background: linear-gradient(135deg, #dc2626 0%, #ec4899 100%);
+}
+
+.trip-card.nyc {
+  background: linear-gradient(135deg, #2563eb 0%, #6366f1 100%);
+}
+
+.trip-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.trip-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.trip-destination {
+  font-size: 0.75rem;
+  color: #e5e5e5;
+}
+
+.trip-date {
+  font-size: 0.75rem;
+  color: #d4d4d4;
+  margin-top: 0.25rem;
+}
+
+/* Plan Trip Button */
+.plan-section {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.plan-btn {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 0.625rem 1.25rem;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.plan-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.plan-icon {
+  font-size: 1.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .regional-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .trips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-container {
+    padding: 1rem;
+  }
+  
+  .main-wrapper {
+    padding: 1rem;
+  }
+  
+  .search-section {
+    flex-direction: column;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
+  
+  .search-buttons {
+    width: 100%;
+  }
+  
+  .action-btn {
+    flex: 1;
+  }
+  
+  .regional-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .trips-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .banner {
+    height: 150px;
+  }
+  
+  .banner-icon {
+    font-size: 2rem;
+  }
+  
+  .banner-text {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-name {
+    font-size: 0.875rem;
+  }
+  
+  .settings-btn {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .region-card {
+    height: 96px;
+  }
+  
+  .region-icon {
+    font-size: 2rem;
+  }
+  
+  .region-name {
+    font-size: 0.75rem;
+  }
+  
+  .trip-card {
+    height: 160px;
+  }
+  
+  .trip-icon {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,15 @@
+.trip-form-section {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.date-row {
+  display: flex;
+  gap: 10px;
+}
+
+.date-row input {
+  flex: 1;
+}
